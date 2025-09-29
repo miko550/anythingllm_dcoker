@@ -1,2 +1,2 @@
-# anythingllm_dcoker
+# anythingllm_docker
 Docker Compose for anythingllm deployment
