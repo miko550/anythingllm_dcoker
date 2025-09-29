@@ -14,3 +14,14 @@ services:
     environment:
       STORAGE_DIR: "/app/server/storage"
     restart: unless-stopped
+    
+  gateway:
+    image: docker/mcp-gateway
+    command:
+      - --servers=duckduckgo
+      - --transport=streamable     # or: --transport=sse
+      - --port=8811
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8811:8811"
